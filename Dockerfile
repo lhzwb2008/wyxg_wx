@@ -26,7 +26,8 @@ VOLUME /home/root/music
 
 
 
-RUN yum -y install net-tools \
+RUN curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-vault-6.10.repo \
+&& yum -y install net-tools \
 && yum -y install gcc gcc-c++ cmake autoconf make automake python-setuptools \
 && yum -y install curl-devel apr-devel apr-util-devel \
 && tar xzf /opt/lampp/htdocs/code/Python-2.6.6.tgz \
